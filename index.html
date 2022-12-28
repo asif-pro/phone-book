@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Book</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+
+<div class="displayArea"> 
+    <h2>Phone Book</h2>
+<fieldset>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+            <td><button>Update</button> || <button>Delete</button></td>
+        </tr>
+        <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+            <td><button>Update</button> || <button>Delete</button></td>
+        </tr>
+        <tr>
+            <td>Ernst Handel</td>
+            <td>Roland Mendel</td>
+            <td>Austria</td>
+            <td><button>Update</button> || <button>Delete</button></td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+    </table>
+    </fieldset>
+</div>
+
+
+
+<div class="inputArea">
+    <form id="inputForm">
+        <fieldset>
+            <label for="firstName">First Name:</label><br>
+            <input type="text" id="firstName" name=""><br>
+            <label for="phone">Phone Number:</label><br>
+            <input type="number" id="phone" name=""><br>
+            <label for="address">Address:</label><br>
+            <input type="text" id="address" name=""><br>
+            <label for=""></label><br>
+            <button id="savebtn">Save</button>
+        </fieldset>
+    </form>
+</div>
+    
+    
+    <script src="../js/main.js"></script>
+</body>
+</html>
