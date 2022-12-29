@@ -33,8 +33,7 @@ input {
     box-sizing: border-box;
 }
 
-.dlt {
-  background-color: #FF0000;
+.dlt,.savebtn {
   border: none;
   color: white;
   padding: 20px;
@@ -44,5 +43,12 @@ input {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 8px;
 }
+.dlt {
+background-color: #FF0000;
+border-radius: 15px;
+}
+.savebtn {
+  background-color: #4CAF50;   
+  border-radius: 8px;
+  }
