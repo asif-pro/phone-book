@@ -21,7 +21,7 @@ $(document).ready(function(){
             html+='<td>'+phoneBook[i].Surname+'</td>';
             html+='<td>'+phoneBook[i].Phone+'</td>';
             html+='<td>'+phoneBook[i].Address+'</td>';
-            html+='<td><button>Update</button> || <button>Delete</button></td>';
+            html+='<td><button class="dlt">Delete</button></td>';
             html+='</tr>';
         }
 
