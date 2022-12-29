@@ -43,6 +43,7 @@ $(document).ready(function(){
         phoneBook.push(info);
         $('#inputForm')[0].reset();
         dispaly();
+        console.log(phoneBook);
 
     });
 
