@@ -12,6 +12,8 @@
 <div class="displayArea"> 
     <h2>Phone Book</h2>
 <fieldset>
+    <input type="text" id="searchbar" placeholder="Searc Here ....">
+    <hr>
     <table id = "print"> 
     </table>
     </fieldset>
@@ -36,7 +38,53 @@
     </form>
 </div>
     
-    
+    <script>
+        // searchContact=()=>{
+            
+        // console.log($("#searchbar").val());
+        // var td, serachval;
+        // let search = $("#searchbar").val();
+        // let filter = search.value.toUpperCase();
+        // let table = $("#print").val();
+        // let tr = table.getElementByTagName("tr");
+
+        // for(let i=0; i<tr.length; i++){
+        //     td = tr[i].getElementByTagName("td")[0];
+        //     if(td){
+        //         serachval = td.textContent || td.innerText;
+        //         if(serachval.toUpperCase().indexOf(filter) > -1){
+        //             tr[i].style.display = "";
+        //         }else{
+        //             tr[i].style.display = "none";
+        //         }
+                
+        //     }
+        // }
+   //};
+
+        // $(document).ready(function(){
+        //     $('#searchbar').keyup(function(){
+        //         search_table($(this).val());
+        //     });
+
+        //     function search_table(value){
+        //         $('#print tr').each(function(){
+        //             var found = 'false';
+        //             $(this).each(function(){
+        //                 if(($this).text().toLowerCase().indexOf(value.toLowerCase())>=0){
+        //                     found = true;
+        //                 }
+        //             });
+        //             if(found == 'true'){
+        //                 $(this).show();
+        //             }
+        //             else{
+        //                 $(this).hide();
+        //             }
+        //         });
+        //     }
+        // });
+    </script>
     <script src="../js/main.js"></script>
 </body>
 </html>

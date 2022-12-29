@@ -1,7 +1,3 @@
-// var keys = ['key1', 'key2', 'key3']
-
-// var object = Object.assign({}, ...Object.entries({...keys}).map(([a,b]) => ({ [b]: 'someValue' })))
-
 $(document).ready(function(){
 
     const phoneBook = [];
@@ -21,7 +17,7 @@ $(document).ready(function(){
             html+='<td>'+phoneBook[i].Surname+'</td>';
             html+='<td>'+phoneBook[i].Phone+'</td>';
             html+='<td>'+phoneBook[i].Address+'</td>';
-            html+='<td><button class="dlt">Delete</button></td>';
+            html+='<td><button class="dlt" id="dltbtn" >Delete</button></td>';
             html+='</tr>';
         }
 
@@ -43,8 +39,40 @@ $(document).ready(function(){
         phoneBook.push(info);
         $('#inputForm')[0].reset();
         dispaly();
-        console.log(phoneBook);
+        //console.log(phoneBook);
 
     });
 
+    $('#dltbtn').click((ev)=>{
+        ev.preventDefault();
+        alert('Are you sure to delete this ?');
+    });
+    
+
+
+    $('#searchbar').keyup(function(){
+        //console.log($(this).val());
+
+        var td, serachval;
+        var search = $("#searchbar").val();
+        //let filter = typeof search === 'string' ? search.value.toUpperCase() : '';
+        let filter = search.value.toUpperCase();
+        let table = $("#print").val();
+        let tr = table.getElementByTagName("tr");
+
+        for(let i=0; i<tr.length; i++){
+            td = tr[i].getElementByTagName("td")[0];
+            if(td){
+                serachval = td.textContent || td.innerText;
+                if(serachval.toUpperCase().indexOf(filter) > -1){
+                    tr[i].style.display = "";
+                }else{
+                    tr[i].style.display = "none";
+                }
+                
+            }
+        }
+    });
+
+   
 });
