@@ -9,7 +9,7 @@
 <body>
     
 
-<div class="displayArea"> 
+<div class="displayArea" id="first"> 
     <h2>Address Book</h2>
 <fieldset>
     <input type="text" id="searchbar" placeholder="Searc Here By Name ....">
@@ -19,9 +19,17 @@
     </fieldset>
 </div>
 
+<div id="second">
+<fieldset>
+    <button class="back" onclick="backtoHome()"><-Back</button>
+    <table id = "print2"> 
+    </table>
+    </fieldset>
+</div>
 
 
-<div class="inputArea">
+
+<div class="inputArea" id="inputf">
     <form id="inputForm">
         <fieldset>
             <label for="firstName">Name:*</label><br>

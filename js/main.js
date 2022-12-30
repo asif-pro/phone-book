@@ -3,18 +3,10 @@ function dispaly(){
     var html ="";
         html+='<tr>';
         html+='<th>Name</th>';
-        html+='<th>Surname</th>';
-        html+='<th>Phone</th>';
-        html+='<th>Address</th>';
-        html+='<th>Action</th>';
         html+='</tr>';
     for(var i = 0; i<phoneBook.length; i++){
         html+='<tr>';
-        html+='<td>'+phoneBook[i].Name+'</td>';
-        html+='<td>'+phoneBook[i].Surname+'</td>';
-        html+='<td>'+phoneBook[i].Phone+'</td>';
-        html+='<td>'+phoneBook[i].Address+'</td>';
-        html+='<td><button class="dlt" onclick="deleteContact('+i+')" >Delete</button></td>';
+        html+='<td onclick="details('+i+')">'+phoneBook[i].Name+'</td>';
         html+='</tr>';
     }
     if(phoneBook.length < 1){
@@ -26,11 +18,14 @@ function dispaly(){
 
     document.getElementById("print").innerHTML = html;
 }
+function dispalyindiviaual(){
+    
+}
 
 
 
 $(document).ready(function(){
-
+    $('#second').hide();
     dispaly();
 
     $('#savebtn').click((ev)=>{
@@ -64,9 +59,44 @@ function deleteContact(i){
 
     if(confirm(msg)){
         phoneBook.splice(i, 1);
+        $('#first').show();
+        $('#inputf').show();
+        $('#second').hide();
         dispaly();
     }
     return false;
+}
+function details(i){
+    $('#first').hide();
+    $('#inputf').hide();
+    $('#second').show();
+
+    var html ="";
+        html+='<tr>';
+        html+='<th>Name</th>';
+        html+='<th>Surname</th>';
+        html+='<th>Phone</th>';
+        html+='<th>Address</th>';
+        html+='<th>Action</th>';
+        html+='</tr>';
+  
+        html+='<tr>';
+        html+='<td onclick="details('+i+')">'+phoneBook[i].Name+'</td>';
+        html+='<td>'+phoneBook[i].Surname+'</td>';
+        html+='<td>'+phoneBook[i].Phone+'</td>';
+        html+='<td>'+phoneBook[i].Address+'</td>';
+        html+='<td><button class="dlt" onclick="deleteContact('+i+')" >Delete</button></td>';
+        html+='</tr>';
+    
+
+    document.getElementById("print2").innerHTML = html;
+
+}
+function backtoHome(){
+    $('#first').show();
+    $('#inputf').show();
+    $('#second').hide();
+    dispaly();
 }
 
 $('#searchbar').keyup(function(){

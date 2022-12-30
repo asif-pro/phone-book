@@ -32,8 +32,13 @@ input {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
-.dlt,.savebtn {
+.back{
+  margin-bottom: 50px;
+  background-color: #3555d6;   
+  border-radius: 8px;
+  
+}
+.dlt, .savebtn, .back {
   border: none;
   color: white;
   padding: 20px;
