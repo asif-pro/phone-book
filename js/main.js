@@ -58,8 +58,9 @@ $(document).ready(function(){
 
 function deleteContact(i){
     let name = phoneBook[i].Name;
-    let txt = "Are you sure to delete info of";
-    let msg = txt.concat(" ", name);
+    let txt1 = "Are you sure to delete";
+    let txt2 = "'s info. ?";
+    let msg = txt1.concat(" ", name,txt2);
 
     if(confirm(msg)){
         phoneBook.splice(i, 1);
@@ -69,43 +70,19 @@ function deleteContact(i){
 }
 
 $('#searchbar').keyup(function(){
-    //console.log($(this).val());
 
     var td, serachval;
     var search = $("#searchbar").val().toLowerCase();
     var table = $("#print");
     var tr = table.find('tr');
-    //console.log(tr);
-    $('table tr').each((index)=>{
+    search.each((index)=>{
         if(index !==0 ){
-            console.log($(this));
              $row = $(this);
             let value = $row.find('td:first').text();
-            //console.log(value);
             if (value.indexOf(search)!==0){
-                console.log($row);
             }else{
                 $row.show();
             }
         }
     })
-
-    //let filter = typeof search === 'string' ? search.value.toUpperCase() : '';
-    // let filter = search.toUpperCase();
-    // let table = $("#print").html();
-    // let tr = table.getElementByTagName("tr");
-    // console.log(tr);
-
-    // for(let i=0; i<tr.length; i++){
-    //     td = tr[i].getElementByTagName("td")[0];
-    //     if(td){
-    //         serachval = td.textContent || td.innerText;
-    //         if(serachval.toUpperCase().indexOf(filter) > -1){
-    //             tr[i].style.display = "";
-    //         }else{
-    //             tr[i].style.display = "none";
-    //         }
-            
-    //     }
-    // }
 });
