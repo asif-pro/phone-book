@@ -6,7 +6,7 @@ function dispaly(){
         html+='</tr>';
     for(var i = 0; i<phoneBook.length; i++){
         html+='<tr>';
-        html+='<td onclick="details('+i+')">'+phoneBook[i].Name+'</td>';
+        html+='<td onclick="details('+i+')">'+phoneBook[i].Name+' '+phoneBook[i].Surname+'</td>';
         html+='</tr>';
     }
     if(phoneBook.length < 1){
@@ -105,13 +105,17 @@ $('#searchbar').keyup(function(){
     var search = $("#searchbar").val().toLowerCase();
     var table = $("#print");
     var tr = table.find('tr');
-    search.each((index)=>{
+    tr.each((index, element)=>{
+        
         if(index !==0 ){
-             $row = $(this);
-            let value = $row.find('td:first').text();
-            if (value.indexOf(search)!==0){
+            //$row = element;
+            let value = $(element).find('td:first').text();
+            console.log(value);
+            if (value.indexOf(search)!==-1){
+                console.log('if inside');
             }else{
-                $row.show();
+                //$row.show();
+                console.log('else inside');
             }
         }
     })
