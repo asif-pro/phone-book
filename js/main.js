@@ -108,14 +108,11 @@ $('#searchbar').keyup(function(){
     tr.each((index, element)=>{
         
         if(index !==0 ){
-            //$row = element;
-            let value = $(element).find('td:first').text();
-            console.log(value);
+            let value = $(element).find('td:first').text().toLowerCase();
             if (value.indexOf(search)!==-1){
-                console.log('if inside');
+                $(element).show();
             }else{
-                //$row.show();
-                console.log('else inside');
+                $(element).hide();
             }
         }
     })
